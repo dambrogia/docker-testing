@@ -1,5 +1,5 @@
 FROM php:7.2-rc-fpm-alpine3.6
-MAINTAINER Dominic Dambrogia <dominic@gigasavvy.com>
+MAINTAINER Dominic Dambrogia <domdambrogia@gmail.com>
 
 RUN apk update; \
     apk upgrade;

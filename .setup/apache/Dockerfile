@@ -1,5 +1,5 @@
 FROM httpd:2.4-alpine
-MAINTAINER Dominic Dambrogia <dominic@gigasavvy.com>
+MAINTAINER Dominic Dambrogia <domdambrogia@gmail.com>
 
 RUN apk update; \
     apk upgrade;
