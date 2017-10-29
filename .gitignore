@@ -1,0 +1,5 @@
+.setup/apache/logs/*
+!.setup/apache/logs/.gitkeep
+.setup/mysql/data
+
+

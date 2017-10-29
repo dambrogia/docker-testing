@@ -1,0 +1,34 @@
+version: "3"
+services:
+  php:
+    image: php:7.2-rc-fpm-alpine3.6
+    networks:
+      - AMP
+    volumes:
+      - ./public_html/:/var/www/docker/
+  apache:
+    image: httpd:2.4-alpine
+    build: './.setup/apache/'
+    depends_on:
+      - php
+    networks:
+      - AMP
+    ports:
+      - "443:443"
+      - "80:80"
+    volumes:
+      - ./public_html/:/var/www/docker
+      - ./.setup/apache/docker.apache.conf:/usr/local/apache2/conf.d/docker.apache.conf
+      - ./.setup/apache/logs/:/usr/local/apache2/logs
+  mysql:
+    image: mysql
+    volumes:
+      - ./.setup/mysql/data/:/var/lib/mysql/
+    networks:
+      - AMP
+    environment:
+      - MYSQL_ROOT_PASSWORD=docker
+    ports:
+      - "3306:3306"
+networks:
+  AMP:
