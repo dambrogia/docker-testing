@@ -2,7 +2,7 @@
 
 This is a very small proof of concept for running a docker envirenment.
 
-If you have docker installed -
+If you have docker installed:
 
     docker-compose up -d
 
