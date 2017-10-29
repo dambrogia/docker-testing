@@ -1,5 +1,12 @@
 <?php
 
+/**
+ * This file:
+ *     Has not been tested
+ *     Does not use prepared statements
+ *     Is for Proof of Concept only!
+ */
+
 $host = '127.0.0.1';
 $user = 'root';
 $pass = 'docker';
