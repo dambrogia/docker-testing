@@ -25,6 +25,8 @@ Setup a hostfile that points `127.0.0.1` to `docker.dev`
     
 Visit `docker.dev` in your browser.
 
+_Please wait up to 60 seconds for the MySQL service to be available to connect to!_
+
 ## Problems and their resolutions
 
 #### Apache
