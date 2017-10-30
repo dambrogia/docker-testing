@@ -7,11 +7,17 @@
  *     Is for Proof of Concept only!
  */
 
-$host = '127.0.0.1';
+$host = 'mysql';
 $user = 'root';
 $pass = 'docker';
 
 $conn = new mysqli($host, $user, $pass);
+
+/* check connection */
+if ($conn->connect_errno) {
+    printf("Connect failed: %s\n", $conn->connect_error);
+    exit();
+}
 
 $sql = 'show databases';
 $results = $conn->query($sql);
@@ -19,6 +25,8 @@ $results = $conn->query($sql);
 ?>
 
 <h1>Hello Docker!</h1>
+
+<h4>Available Databases:</h4>
 
 <ul>
     <?php while ($row = $results->fetch_assoc()) : ?>
