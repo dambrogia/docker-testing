@@ -1,13 +1,15 @@
-# Docker Testing
+Preface:
 
 I had posted a stack overflow question and there seemed to be little documentation or explanation about how this separation of power works. I've decided to document this for future reference.
 
 [See my question here](https://stackoverflow.com/questions/46997791/containerizing-apache-mysql-and-php-with-docker)
 
+# Docker Testing
+
 This is a very small proof of concept for running a docker environment.
 
-This test environment contains the following containers:
-- php:7.2-rc-fpm-alpine3.6
+This test environment contains the following separate containers working together:
+- php:7.1-fpm-alpine
 - httpd:2.4-alpine
 - mysql:5.6
 
@@ -17,11 +19,11 @@ For more info please see `docker-compose.yml`
 
 ## To get started
 
-If you have docker installed:
+Setup a hostfile that points `127.0.0.1` to `docker.dev`
 
     docker-compose up -d
-
-If you don't have docker installed - [go install it](https://docs.docker.com/engine/installation/) and come right back!
+    
+Visit `docker.dev` in your browser.
 
 ## Problems and their resolutions
 
