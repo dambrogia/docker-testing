@@ -20,12 +20,15 @@ For more info please see `docker-compose.yml`
 ## To get started
 
     git clone https://github.com/dambrogia/docker-testing.git
-    cd docker-testing.git
+    cd docker-testing
     docker-compose up -d
 
-_Please wait up to 60 seconds for the MySQL service to be available to connect to!_
+_Please wait up to 60 seconds for the MySQL service to be available to connect to! Until then you may run into the following error:_
 
-Visit `127.0.0.1:8000` in your browser. You should see a the output from [`public_html/index.php`](https://github.com/dambrogia/docker-testing/blob/master/public_html/index.php).
+    Warning: mysqli::__construct(): (HY000/2002): Connection refused in /var/www/html/index.php on line 14
+    Connect failed: Connection refused
+
+After MySQL is ready, visit `127.0.0.1:8000` in your browser. You should see a the output from [`public_html/index.php`](https://github.com/dambrogia/docker-testing/blob/master/public_html/index.php).
 
 ## Problems and their resolutions
 
