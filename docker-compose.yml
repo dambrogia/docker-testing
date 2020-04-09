@@ -15,8 +15,7 @@ services:
     networks:
       - AMP
     ports:
-      - "443:443"
-      - "80:80"
+      - "8000:80"
     volumes:
       - ./public_html/:/var/www/html/
       - ./.setup/apache/docker.apache.conf:/usr/local/apache2/conf.d/docker.apache.conf
@@ -30,7 +29,7 @@ services:
     environment:
       - MYSQL_ROOT_PASSWORD=docker
     ports:
-      - "3306:3306"
+      - "3307:3306"
   # nginx:
   #   image: nginx:stable-alpine
   #   build: './.setup/nginx/'

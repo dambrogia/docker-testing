@@ -9,7 +9,7 @@ I had posted a stack overflow question and there seemed to be little documentati
 This is a very small proof of concept for running a docker environment.
 
 This test environment contains the following separate containers working together:
-- php:7.1-fpm-alpine
+- php:7.4-fpm-alpine
 - httpd:2.4-alpine
 - mysql:5.6
 
@@ -19,13 +19,16 @@ For more info please see `docker-compose.yml`
 
 ## To get started
 
-Setup a hostfile that points `127.0.0.1` to `docker.dev`
-
+    git clone https://github.com/dambrogia/docker-testing.git
+    cd docker-testing
     docker-compose up -d
-    
-Visit `docker.dev` in your browser.
 
-_Please wait up to 60 seconds for the MySQL service to be available to connect to!_
+_Please wait up to 60 seconds for the MySQL service to be available to connect to! Until then you may run into the following error:_
+
+    Warning: mysqli::__construct(): (HY000/2002): Connection refused in /var/www/html/index.php on line 14
+    Connect failed: Connection refused
+
+After MySQL is ready, visit `127.0.0.1:8000` in your browser. You should see a the output from [`public_html/index.php`](https://github.com/dambrogia/docker-testing/blob/master/public_html/index.php).
 
 ## Problems and their resolutions
 

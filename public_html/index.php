@@ -7,9 +7,9 @@
  *     Is for Proof of Concept only!
  */
 
-$host = 'mysql';
-$user = 'root';
-$pass = 'docker';
+$host = 'mysql'; // Matches the name of the database container.
+$user = 'root'; // For simplicity sake.
+$pass = 'docker'; // Defined in docker-compose.yml.
 
 $conn = new mysqli($host, $user, $pass);
 
